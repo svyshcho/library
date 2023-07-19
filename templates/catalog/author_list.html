@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+P{% block content %}
+  {% if author_list %}
+    <ul>
+    {% for author in author_list %}
+      <li>Author username: {{ author.username }}({{ author.first_name }} {{ author.last_name }})</li>
+    {% endfor %}
+    </ul>
+  {% else %}
+    <p>There is no authors</p>
+  {% endif %}
+{% endblock %}

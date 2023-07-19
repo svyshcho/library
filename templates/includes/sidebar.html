@@ -1,0 +1,12 @@
+<ul class="sidebar-nav">
+  {% if user.is_authenticated %}
+    <li>User: {{ user.username }}</li>
+    <li><a href="{% url 'logout' %}">Logout</a> </li>
+  {% else %}
+    <li><a href="{% url 'login' %}">Login</a> </li>
+  {% endif %}
+  <li><a href="{% url 'catalog:index' %}">Home</a></li>
+  <li><a href="{% url 'catalog:author-list' %}">All authors</a></li>
+  <li><a href="{% url 'catalog:book-list' %}">All books</a></li>
+  <li><a href="{% url 'catalog:literary-formats-list' %}">All Formats</a></li>
+</ul>
